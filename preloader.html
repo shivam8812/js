@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            .prnt {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+        .preload {
+            border: 10px dashed lightgray;
+            border-radius: 50%;
+            border-bottom: 10px dashed black;
+            border-top: 10px dashed black;
+            animation: spin 2s cubic-bezier(0.6, -0.6, 0.8, 0.045) infinite;
+            height: 100px;
+            width: 100px;
+        }            
+
+        .preload2 {
+            border: 10px solid rgb(236, 45, 45);
+            border-radius: 50%;
+            border-bottom: 10px solid rgb(33, 238, 142);
+            border-top: 10px solid rgb(33, 238, 142);
+            animation: spin 2s linear infinite;
+            height: 100px;
+            width: 100px;
+            
+        }           
+
+        .preload3 {
+            border-radius: 50%;
+            border-right: 10px dotted black;
+            border-top: 10px dotted black;
+            
+            animation: spin 2s ease-out infinite;
+            height: 100px;
+            width: 100px;
+        }             
+       @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+        </style>
+        <title>
+            preloader
+        </title>
+    </head>
+    <body>
+        <div class="prnt">
+        <div class="preload"></div>
+        <div class="preload2"></div>
+        <div class="preload3"></div>
+        </div>
+    </body>
+</html>
