@@ -10,34 +10,34 @@
             }
         .clock{
             position: relative;
-            border: 2px black solid;
+            border: 15px rgba(24, 144, 243, 0.37) solid;
             border-radius: 50%;
-            height: 140px;
-            width: 140px;
+            height: 180px;
+            width: 180px;
         }    
         .sec-hand{
             position: absolute;
-            border: 1px black solid;
+            border: 1px  rgba(240, 146, 5, 1) solid;
             width: 50%;
             transform-origin: 100%;
             transform: rotate(90deg);
-            margin-top: 70px;
-            transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+            margin-top: 90px;
+            
 
         }
         .min-hand{
             position: absolute;
-            border: 1px black solid;
+            border: 1px rgba(240, 146, 5, 1) solid;
             width: 50%;
-            margin-top: 70px;
+            margin-top: 90px;
             transform: rotate(90deg);
             transform-origin: 100%;
         }
         .hour-hand{
             position: absolute;
-            border: 1px black solid;
+            border: 1px  rgba(240, 146, 5, 1) solid;
             width: 50%;
-            margin-top: 70px;               
+            margin-top: 90px;               
             transform: rotate(90deg);
             transform-origin: 100%;
 
@@ -57,22 +57,22 @@
         </div>
     </body>
     <script>
-     const secondhand=document.querySelector('.sec-hand');
-     const minutehand=document.querySelector('.min-hand');
-     const hourhand=document.querySelector('.hour-hand');
+     var secondhand=document.querySelector('.sec-hand');
+     var minutehand=document.querySelector('.min-hand');
+     var hourhand=document.querySelector('.hour-hand');
      function setdate(){
-         const now=new Date();
-         const seconds=now.getSeconds();
-         const secondsdeg=(seconds*6)+90;
-         secondhand.style.transform=`rotate(${secondsdeg}deg)`;
+         var now=new Date();
+         var seconds=now.getSeconds();
+         var secondsdeg=(seconds*6)+90;
+         secondhand.style.transform="rotate("+secondsdeg+"deg)";
 
-         const minutes=now.getMinutes();
-         const minsdeg=(minutes*6)+90;
-         minutehand.style.transform=`rotate(${minsdeg}deg)`;
+         var minutes=now.getMinutes();
+         var minsdeg=(minutes*6)+90;
+         minutehand.style.transform="rotate("+minsdeg+"deg)";
 
-         const hours=now.getHours();
-         const hoursdeg=(hours*30)+(minutes/2)+90;
-         hourhand.style.transform=`rotate(${hoursdeg}deg)`;
+         var hours=now.getHours();
+         var hoursdeg=(hours*30)+(minutes/2)+90;
+         hourhand.style.transform="rotate("+hoursdeg+"deg)";
      }
 
      setInterval(setdate,1000);

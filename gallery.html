@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <style>
+
+            .panels {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background-size: cover;
+            }
+            .panel{
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                justify-content:center; 
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-size: 3em;
+                -webkit-text-fill-color: aliceblue;
+                font-family: cursive;
+                transition:
+                font-size 0.7s cubic-bezier(0.51,-0.19, 0.7,-0.11),
+                flex 0.7s cubic-bezier(0.51,-0.19, 0.7,-0.11),
+                background 0.24s;
+                background-position: center;
+            }
+            .panel > *{
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: transform 0.5s;
+                font-size: 1em;
+                flex: 1;
+            }
+            
+            .panel1{
+                background-image:url("1.jpeg");
+                
+
+            }
+            .panel2{
+                background-image:url("2.jfif");
+               
+            }
+            .panel3{
+                background-image:url("3.jpeg");
+               
+            }
+            .panel4{
+                background-image:url("4.jpeg");
+               
+            }
+            .panel5{
+                background-image:url("5.jpeg");
+            }
+            .panel.click{
+                flex: 5;
+                font-size: 5em;
+            }
+            .panel.stay > *:first-child{
+                transform: translateY(0);
+            }
+             .panel.stay > *:last-child{
+                 transform: translateY(0);
+             }
+            .panel > *:first-child{
+                transform: translateY(-100%);
+            }
+            .panel > *:last-child{
+                transform: translateY(100%);
+            }
+            
+            
+           
+            
+        </style>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div class="panels">
+            <div class="panel panel1">
+                <p >HELLO</p>
+                <p >STAY</p>
+                <p>POSETIVE</p>
+            </div>
+            <div class="panel panel2">
+                <p>THANK</p>
+                <p>ME</p>
+                <p>LATER</p>
+            </div>
+            <div class="panel panel3">
+                <p>BRING</p>
+                <p>IT</p>
+                <p>BACK</p>
+            </div>
+            <div class="panel panel4">
+                <p>TAKE</p>
+                <p>MY</p>
+                <p>LEAD</p>
+            </div>
+            <div class="panel panel5">
+                <p>DO</p>
+                <p>IT</p>
+                <p>NOW</p>    
+            </div>
+
+        </div>
+    </body>
+    <script>
+        
+        var ele=document.querySelectorAll('.panel') ;
+        function toggleclick(){
+            this.classList.toggle('click');
+        
+        }
+        function togglestay(e){
+            this.classList.toggle('stay');
+        }
+
+        ele.forEach(panel => panel.addEventListener('click',toggleclick));
+        ele.forEach(panel => panel.addEventListener('click',togglestay));
+    </script>
+</html>
